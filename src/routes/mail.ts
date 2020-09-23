@@ -1,4 +1,4 @@
-import  Router from 'koa-router';
+import Router from 'koa-router';
 import main from '../util/mailer';
 
 const router = new Router();
@@ -21,12 +21,35 @@ router.get('/api/email/oplata/toUser/:email/:name/', async (ctx, err) => {
     await main(text, subject, email);
 });
 
-router.post('/api/email/new-fee/toUser', async(ctx,err)=>{
-    
+router.post('/api/email/new-fee/toUser', async (ctx, err) => {
+    const { email, fee, name } = ctx.body;
+
+    const subject: string = "Новий штраф!"
+    const text: string = `<h1>Шановний ${name}</h1>
+        <p> Ви маєте несплачений штраф:
+        ${fee}
+        </p>
+        <h1>Команда «Way without problem» </h1>
+    `;
+
+    await main(text, subject, email);
 });
 
-router.post('/api/email/status-fee/toUser', async(ctx,err)=>{
+router.post('/api/email/status-fee/toUser', async (ctx, err) => {
+    const { email, fee, status, name } = ctx.body;
 
+    const subject: string = "Статус штрафу!"
+    const text: string = `<h1>Шановний ${name}</h1>
+        <p> Ви маєте несплачений штраф:
+        ${fee}
+        </p>
+        <p>
+        Статус Вашого сплаченого штрафу – ${status}
+        </p>
+        <h1>Команда «Way without problem» </h1>
+    `;
+
+    await main(text, subject, email);
 });
 
 export default router;
