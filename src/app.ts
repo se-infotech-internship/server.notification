@@ -1,17 +1,21 @@
-import  koa from 'koa';
-import  Router from 'koa-router';
+import koa from 'koa';
+import Router from 'koa-router';
 
-import MailRoute from './routes/mail';
+import MailRoutes from './routes/mail';
+import config from './config/config';
 
 const app = new koa();
 
 const router = new Router();
 
-app.use(MailRoute.routes());
-
-app.use(router.routes());
+const port = config.development.port;
 
 
-app.listen(3000, () => {
+
+app.use(MailRoutes.routes());
+
+
+
+app.listen(port, () => {
     console.log("it works!");
 })
