@@ -20,13 +20,15 @@
   "homepage": "https://github.com/JohnyKovalenko1337/mail-notify#readme",
   "dependencies": {
     "koa": "^2.13.0",
-    "koa-router": "^9.4.0"
+    "koa-router": "^9.4.0",
+    "nodemailer": "^6.4.11"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
     "@types/koa": "^2.11.4",
     "@types/koa-router": "^7.4.1",
     "@types/node": "^14.11.2",
+    "@types/nodemailer": "^6.4.0",
     "nodemon": "^2.0.4",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"
