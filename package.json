@@ -1,0 +1,34 @@
+{
+  "name": "kovalenko-yevhen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec ts-node src/app.ts",
+    "build": "npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnyKovalenko1337/mail-notify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnyKovalenko1337/mail-notify/issues"
+  },
+  "homepage": "https://github.com/JohnyKovalenko1337/mail-notify#readme",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-router": "^9.4.0"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/koa": "^2.11.4",
+    "@types/koa-router": "^7.4.1",
+    "@types/node": "^14.11.2",
+    "nodemon": "^2.0.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  }
+}
