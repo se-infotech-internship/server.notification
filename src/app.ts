@@ -1,5 +1,5 @@
-import * as koa from 'koa';
-import * as Router from 'koa-router';
+import  koa from 'koa';
+import  Router from 'koa-router';
 
 import MailRoute from './routes/mail';
 
