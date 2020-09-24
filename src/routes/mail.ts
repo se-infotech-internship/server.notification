@@ -1,55 +1,56 @@
 import Router from 'koa-router';
+import { Context } from 'koa';
 import main from '../util/mailer';
 
 const router = new Router();
+ 
+// payment of the app email
+router.post('/api/email/oplata/toUser', async (ctx: Context, err) => {
+    const { email, name } = ctx.request.body;
 
-router.get('/api/email/oplata/toUser/:email/:name/', async (ctx, err) => {
-    const email: string = ctx.params.email;
-    const name: string = ctx.params.name;
-
+   
     const subject: string = "Оплата додатку";
-    const text: string = `<h1>Шановний ${name}</h1>
+    const text: string = `<h1>Шановний, ${name}!</h1>
         <p> Через 5 днів закінчується термін
         сплаченого періоду за додаток «Way
-        without problem»
+        without problem».
         Будь ласка, сплатіть за додаток, щоб
         використовувати всі його функції
         </p>
-        <h1>Команда «Way without problem» </h1>
+        <h3>Команда «Way without problem» </h3>
     `;
-
-    await main(text, subject, email);
+    main(text, subject, email);
 });
-
-router.post('/api/email/new-fee/toUser', async (ctx, err) => {
-    const { email, fee, name } = ctx.body;
+// new fee email router
+router.post('/api/email/new-fee/toUser', async (ctx: Context, err) => {
+    const { email, fee, name } = ctx.request.body;
 
     const subject: string = "Новий штраф!"
-    const text: string = `<h1>Шановний ${name}</h1>
+    const text: string = `<h1>Шановний ${name}!</h1>
         <p> Ви маєте несплачений штраф:
         ${fee}
         </p>
-        <h1>Команда «Way without problem» </h1>
+        <h3>Команда «Way without problem» </h3>
     `;
 
-    await main(text, subject, email);
+    main(text, subject, email);
 });
-
-router.post('/api/email/status-fee/toUser', async (ctx, err) => {
-    const { email, fee, status, name } = ctx.body;
+// changed status of fee email
+router.post('/api/email/status-fee/toUser', async (ctx: Context, err) => {
+    const { email, fee, status, name } = ctx.request.body;
 
     const subject: string = "Статус штрафу!"
-    const text: string = `<h1>Шановний ${name}</h1>
+    const text: string = `<h1>Шановний, ${name}!</h1>
         <p> Ви маєте несплачений штраф:
         ${fee}
         </p>
         <p>
         Статус Вашого сплаченого штрафу – ${status}
         </p>
-        <h1>Команда «Way without problem» </h1>
+        <h3>Команда «Way without problem» </h3>
     `;
 
-    await main(text, subject, email);
+    main(text, subject, email);
 });
 
 export default router;
