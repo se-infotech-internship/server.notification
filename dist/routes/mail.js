@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const koa_router_1 = __importDefault(require("koa-router"));
 const mailer_1 = __importDefault(require("../util/mailer"));
 const router = new koa_router_1.default();
-router.get('/api/email/toUser/:email/:name/', (ctx, err) => __awaiter(void 0, void 0, void 0, function* () {
+router.get('/api/email/oplata/toUser/:email/:name/', (ctx, err) => __awaiter(void 0, void 0, void 0, function* () {
     const email = ctx.params.email;
     const name = ctx.params.name;
     const subject = "Оплата додатку";
@@ -25,6 +25,31 @@ router.get('/api/email/toUser/:email/:name/', (ctx, err) => __awaiter(void 0, vo
         without problem»
         Будь ласка, сплатіть за додаток, щоб
         використовувати всі його функції
+        </p>
+        <h1>Команда «Way without problem» </h1>
+    `;
+    mailer_1.default(text, subject, email);
+}));
+router.post('/api/email/new-fee/toUser', (ctx, err) => __awaiter(void 0, void 0, void 0, function* () {
+    const { email, fee, name } = ctx.body;
+    const subject = "Новий штраф!";
+    const text = `<h1>Шановний ${name}</h1>
+        <p> Ви маєте несплачений штраф:
+        ${fee}
+        </p>
+        <h1>Команда «Way without problem» </h1>
+    `;
+    yield mailer_1.default(text, subject, email);
+}));
+router.post('/api/email/status-fee/toUser', (ctx, err) => __awaiter(void 0, void 0, void 0, function* () {
+    const { email, fee, status, name } = ctx.body;
+    const subject = "Статус штрафу!";
+    const text = `<h1>Шановний ${name}</h1>
+        <p> Ви маєте несплачений штраф:
+        ${fee}
+        </p>
+        <p>
+        Статус Вашого сплаченого штрафу – ${status}
         </p>
         <h1>Команда «Way without problem» </h1>
     `;
