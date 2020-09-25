@@ -1,8 +1,7 @@
 const config = {
 
     development:{
-        port: process.env.port || 3000,
-
+        port: process.env.port || 3000
     },
 
     mailer:{
@@ -10,7 +9,12 @@ const config = {
         password:"byajnt[2020"
     },
 
-
+    certificates:{
+        cert: "zxc",
+        key: "zxc"
+    },
+    
+    gcmApi:"zxc"
 
 };
 
