@@ -21,6 +21,7 @@ router.post('/api/email/oplata/toUser', async (ctx: Context, err) => {
     `;
     main(text, subject, email);
 });
+
 // new fee email router
 router.post('/api/email/new-fee/toUser', async (ctx: Context, err) => {
     const { email, fee, name } = ctx.request.body;
@@ -30,13 +31,14 @@ router.post('/api/email/new-fee/toUser', async (ctx: Context, err) => {
         <p> Ви маєте несплачений штраф: <h2> ${fee.title} </h2>
         </p>
         <p>
-        Ви порушили: ${fee.data}
+        Ви порушили: ${fee.date}
         </p>
         <h3>Команда «Way without problem» </h3>
     `;
 
     main(text, subject, email);
 });
+
 // changed status of fee email
 router.post('/api/email/status-fee/toUser', async (ctx: Context, err) => {
     const { email, fee, name } = ctx.request.body;
@@ -44,7 +46,7 @@ router.post('/api/email/status-fee/toUser', async (ctx: Context, err) => {
     const subject: string = "Статус штрафу!"
     const text: string = `<h1>Шановний, ${name}!</h1>
         <p> Ваш штраф: 
-        "${fee.title}", скоєний : ${fee.data}
+        "${fee.title}", скоєний : ${fee.date}
         </p>
         <p>
         Має новий статус оплати – ${fee.status}!
