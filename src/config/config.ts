@@ -9,12 +9,7 @@ const config = {
         password:"byajnt[2020"
     },
 
-    certificates:{
-        cert: "zxc",
-        key: "zxc"
-    },
     
-    gcmApi:"zxc"
 
 };
 
