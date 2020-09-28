@@ -8,5 +8,10 @@ const config = {
         user: "way.without.problem@gmail.com",
         password: "byajnt[2020"
     },
+    certificates: {
+        cert: "zxc",
+        key: "zxc"
+    },
+    gcmApi: "zxc"
 };
 exports.default = config;
