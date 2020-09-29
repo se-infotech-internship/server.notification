@@ -17,10 +17,18 @@ router.post('/api/push/oplata/toUser', async (ctx: Context, err) => {
         }
     };
 
-    await pusher(registrationToken, message);
-
-    ctx.body = {
-        message: "all is allright"
+    try{
+        await pusher(registrationToken, message);
+        ctx.status = 200;
+        ctx.body = {
+            message: "all is allright"
+        }
+    }
+    catch(err){
+        ctx.body = {
+            message: "failed to send notification",
+            error: err
+        }
     }
 
 });
@@ -37,10 +45,21 @@ router.post('/api/push/new-fee/toUser', async (ctx: Context, err) => {
         }
     };
 
-    await pusher(registrationToken, message);
-    ctx.body = {
-        message: "all is allright"
+    try{
+        await pusher(registrationToken, message);
+        ctx.status = 200;
+        ctx.body = {
+            message: "all is allright"
+        }
     }
+    catch(err){
+        ctx.body = {
+            message: "failed to send notification",
+            error: err
+        }
+    }
+    
+    
 });
 
 // changed status of fee notification
@@ -55,10 +74,21 @@ router.post('/api/push/status-fee/toUser', async (ctx: Context, err) => {
         }
     };
 
-    await pusher(registrationToken, message);
-    ctx.body = {
-        message: "all is allright"
+    try{
+        await pusher(registrationToken, message);
+        ctx.status = 200;
+        ctx.body = {
+            message: "all is allright"
+        }
+    }
+    catch(err){
+        ctx.body = {
+            message: "failed to send notification",
+            error: err
+        }
     }
 });
+
+//
 
 export default router;

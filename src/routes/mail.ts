@@ -19,7 +19,21 @@ router.post('/api/email/oplata/toUser', async (ctx: Context, err) => {
         </p>
         <h3>Команда «Way without problem» </h3>
     `;
-    main(text, subject, email);
+
+    try {
+        main(text, subject, email);
+        ctx.status = 200;
+        ctx.body = {
+            message: "successed"
+        };
+    }
+    catch (err) {
+        ctx.body = {
+            message: "Failed to send email",
+            error: err
+        };
+    }
+
 });
 
 // new fee email router
@@ -36,7 +50,19 @@ router.post('/api/email/new-fee/toUser', async (ctx: Context, err) => {
         <h3>Команда «Way without problem» </h3>
     `;
 
-    main(text, subject, email);
+    try {
+        main(text, subject, email);
+        ctx.status = 200;
+        ctx.body = {
+            message: "successed"
+        };
+    }
+    catch (err) {
+        ctx.body = {
+            message: "Failed to send email",
+            error: err
+        };
+    }
 });
 
 // changed status of fee email
@@ -54,7 +80,19 @@ router.post('/api/email/status-fee/toUser', async (ctx: Context, err) => {
         <h3>Команда «Way without problem» </h3>
     `;
 
-    main(text, subject, email);
+    try {
+        main(text, subject, email);
+        ctx.status = 200;
+        ctx.body = {
+            message: "successed"
+        };
+    }
+    catch (err) {
+        ctx.body = {
+            message: "Failed to send email",
+            error: err
+        };
+    }
 });
 
 // signup email confirmation route
@@ -68,9 +106,19 @@ router.post('/api/email/confirm/toUser', async (ctx: Context, err) => {
         <p> ${link}</p>
         <h3>Команда «Way without problem» </h3>
     `
-    main(text, subject, email);
-
-    ctx.body = {message: "success"};
+    try {
+        main(text, subject, email);
+        ctx.status = 200;
+        ctx.body = {
+            message: "successed"
+        };
+    }
+    catch (err) {
+        ctx.body = {
+            message: "Failed to send email",
+            error: err
+        };
+    }
 });
 
 // forgot password email route
@@ -85,9 +133,19 @@ router.post('/api/email/change/toUser', async (ctx: Context, err) => {
     <h3>Команда «Way without problem» </h3>
     `;
 
-    main(text, subject, email);
-
-    ctx.body = {message: "success"};
+    try {
+        main(text, subject, email);
+        ctx.status = 200;
+        ctx.body = {
+            message: "successed"
+        };
+    }
+    catch (err) {
+        ctx.body = {
+            message: "Failed to send email",
+            error: err
+        };
+    }
 })
 
 
