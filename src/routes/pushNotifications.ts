@@ -89,6 +89,33 @@ router.post('/api/push/status-fee/toUser', async (ctx: Context, err) => {
     }
 });
 
-//
+// sound camera notification
+
+router.post('/api/push/camera/toUser', async (ctx: Context, err) => {
+
+    const { registrationToken, range} = ctx.request.body;
+
+    const message = {
+        notification: {
+            title: 'Камера',
+            body: `Камера через ${range} метрів`,
+            sound:"default"
+        }
+    };
+
+    try{
+        await pusher(registrationToken, message);
+        ctx.status = 200;
+        ctx.body = {
+            message: "all is allright"
+        }
+    }
+    catch(err){
+        ctx.body = {
+            message: "failed to send notification",
+            error: err
+        }
+    }
+});
 
 export default router;
