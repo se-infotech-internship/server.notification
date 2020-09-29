@@ -3,12 +3,12 @@ import { Context } from 'koa';
 import main from '../util/mailer';
 
 const router = new Router();
- 
+
 // payment of the app email
 router.post('/api/email/oplata/toUser', async (ctx: Context, err) => {
     const { email, name } = ctx.request.body;
 
-   
+
     const subject: string = "Оплата додатку";
     const text: string = `<h1>Шановний, ${name}!</h1>
         <p> Через 5 днів закінчується термін
@@ -56,5 +56,39 @@ router.post('/api/email/status-fee/toUser', async (ctx: Context, err) => {
 
     main(text, subject, email);
 });
+
+// signup email confirmation route
+router.post('/api/email/confirm/toUser', async (ctx: Context, err) => {
+    const { email, name, link } = ctx.request.body;
+
+    const subject: string = "Підтвердження email!"
+
+    const text: string = `<h1>Шановний, ${name}!</h1> 
+        <p> Щоб підтвердити Email перейдіть по посиланню:</p>
+        <p> ${link}</p>
+        <h3>Команда «Way without problem» </h3>
+    `
+    main(text, subject, email);
+
+    ctx.body = {message: "success"};
+});
+
+// forgot password email route
+router.post('/api/email/change/toUser', async (ctx: Context, err) => {
+    const { email, name, link } = ctx.request.body;
+
+    const subject: string = "Зміна паролю!";
+
+    const text: string = `<h1> Шановний, ${name}!</h1> 
+    <p> Щоб змінити пароль перейдіть по посиланню:</p>
+    <p> ${link} </p>
+    <h3>Команда «Way without problem» </h3>
+    `;
+
+    main(text, subject, email);
+
+    ctx.body = {message: "success"};
+})
+
 
 export default router;
