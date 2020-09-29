@@ -4,7 +4,7 @@ import IpushOptions from '../types/IpushOptions';
 
 
 const pusher = (registrationToken: string | string[], message: IpushMessage | any) => {
-    
+
     const options: IpushOptions | any = {
         priority: "high",
         timeToLive: 60 * 60 * 24
@@ -17,7 +17,6 @@ const pusher = (registrationToken: string | string[], message: IpushMessage | an
         .catch(err => {
             console.log(err);
         })
-
 
 }
 
