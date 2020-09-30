@@ -4,22 +4,22 @@
 
 # Email EndPoints
 
-* [`POST` - Payment for app email](#POST-/api/email/oplata/toUser/)
-* [`POST` - New fee email](#POST-/api/email/new-fee/toUser/)
-* [`POST` - Changed status of fee email](#POST-/api/email/status-fee/toUser/)
-* [`POST` - Email for confirmation in signup ](#POST-/api/email/confirm/toUser/)
-* [`POST` - Email for change of password](#POST-/api/email/change/toUser/)
+* [`POST` - Payment for app email - `/api/email/oplata/toUser/`](#email-payment-for-app)
+* [`POST` - New fee email - `/api/email/new-fee/toUser/`](#email-new-fee)
+* [`POST` - Changed status of fee email - `/api/email/status-fee/toUser/`](#email-status-fee)
+* [`POST` - Email for confirmation in signup - `/api/email/confirm/toUser/`](#email-signup-confirm)
+* [`POST` - Email for change of password - `/api/email/change/toUser/`](#email-change-password)
 
 # Push-Notification EndPoints
 
-* [`POST` - Notification "payment for app"](#POST-/api/push/oplata/toUser)
-* [`POST` - Notification "New fee"](#POST-/api/push/new-fee/toUser/)
-* [`POST` - Notification "Changed status of fee"](#POST-/api/push/status-fee/toUser/)
-* [`POST` - Notification "camera in "xxx" metrs"](#POST-/api/push/camera/toUser/)
+* [`POST` - Notification "payment for app" - `/api/push/oplata/toUser`](#notification-payment-for-app)
+* [`POST` - Notification "New fee" - `/api/push/new-fee/toUser/`](#notification-new-fee)
+* [`POST` - Notification "Changed status of fee" - `/api/push/status-fee/toUser/`](#notification-changed-status)
+* [`POST` - Notification "camera in "xxx" metrs" - `/api/push/camera/toUser/`](#notification-camera)
 
-# POST /api/email/oplata/toUser/
+# Email payment for app
 
-### Payment for app email
+## POST /api/email/oplata/toUser/
 ### - Request example:
  ` 
  body:{
@@ -35,8 +35,8 @@
 
 }`
 
-# POST-/api/email/new-fee/toUser/
-### new fee email
+# Email new fee
+## POST-/api/email/new-fee/toUser/
 ### -Request example:
  ` 
  body:{
@@ -57,7 +57,8 @@
 
 }`
 
-# POST-/api/email/status-fee/toUser/
+# Email status fee
+## POST-/api/email/status-fee/toUser/
 ### change status of fee email
 ### Request example:
  ` 
@@ -79,8 +80,8 @@
     "message": "successed"
 
 }`
-# POST-/api/email/confirm/toUser/
-### signup email confirm
+# Email signup confirm
+## POST-/api/email/confirm/toUser/
 ### Request example:
  ` 
  body:{
@@ -97,8 +98,8 @@
     "message": "successed"
 
 }`
-# POST-/api/email/change/toUser/
-### change password email
+# Email change password
+## POST-/api/email/change/toUser/
 ### Request example:
  ` 
  body:{
@@ -115,8 +116,8 @@
     "message": "successed"
     
 }`
-# POST-/api/push/oplata/toUser
-### Payment for app push-notification
+# Notification payment for app
+## POST-/api/push/oplata/toUser
 ### Request example:
  ` 
  body:
@@ -133,8 +134,8 @@
     "message": "successed"
 
 }`
-# POST-/api/push/new-fee/toUser/
-### push-Notification "new fee"
+# Notification new fee
+## POST-/api/push/new-fee/toUser/
 ### Request example:
  `
  body:{
@@ -155,8 +156,8 @@
      message:"success"
  }
  `
- # POST-/api/push/status-fee/toUser/
- ### push-Notification "changed status of your fee"
+ # Notification changed status
+ ## POST-/api/push/status-fee/toUser/
  ### Request example:
  `
  body:{
@@ -178,8 +179,8 @@
      message:"success"
  }
  `
-# POST-/api/push/camera/toUser/
- ### push-Notification camera in "xxx" metrs
+# Notification camera
+ ## POST-/api/push/camera/toUser/
  ### Request example:
  `
  body:{
