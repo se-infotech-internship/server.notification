@@ -17,7 +17,7 @@
 * [`POST` - Notification "Changed status of fee"](#POST-/api/push/status-fee/toUser/)
 * [`POST` - Notification "camera in "xxx" metrs"](#POST-/api/push/camera/toUser/)
 
-## POST /api/email/oplata/toUser/
+# POST /api/email/oplata/toUser/
 
 ### Payment for app email
 ### - Request example:
