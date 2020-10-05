@@ -43,11 +43,7 @@
 
     "email":"test@gmail.com",
     "name":"Tom Rofl",
-    "fee":{
-        "title":"Перевищення швидкості",
-        "date":"10.09.20"
-    }
-
+    "fee":"https://google.com"
 }
 `
 ### -Response example:
