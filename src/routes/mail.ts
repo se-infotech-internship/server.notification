@@ -42,10 +42,7 @@ router.post('/api/email/new-fee/toUser', async (ctx: Context, err) => {
 
     const subject: string = "Новий штраф!"
     const text: string = `<h1>Шановний, ${name}!</h1>
-        <p> Ви маєте несплачений штраф: <h2> ${fee.title} </h2>
-        </p>
-        <p>
-        Ви порушили: ${fee.date}
+        <p> Ви маєте несплачений штраф:  ${fee} 
         </p>
         <h3>Команда «Way without problem» </h3>
     `;
