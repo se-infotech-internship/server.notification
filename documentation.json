@@ -1,0 +1,262 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Notification API",
+        "description": "API description in Markdown.",
+        "version": "1.0.0"
+    },
+    "host": "http://localhost:4000/",
+    "paths": {
+        "/api/email/oplata/toUser/": {
+            "POST": {
+                "summary": "Creates a new user.",
+                "request": {
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "email": "test@gmail.com",
+                                "name": "Tom Rofl"
+                            }
+                        }
+                    }
+                },
+                "responce": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "message": "success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/email/new-fee/toUser/": {
+            "POST": {
+                "summary": "Email new fee",
+                "request": {
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "email": "test@gmail.com",
+                                "name": "Tom Rofl",
+                                "fee": "https://google.com"
+                            }
+                        }
+                    }
+                },
+                "responce": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "message": "success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/email/status-fee/toUser/": {
+            "POST": {
+                "summary": "Email status fee",
+                "request": {
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "email": "test@gmail.com",
+                                "name": "Tom Rofland",
+                                "fee": {
+                                    "title": "Перевищення швидкості",
+                                    "date": "10.09.20",
+                                    "status": "Оплачений"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responce": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "message": "success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/email/confirm/toUser/": {
+            "POST": {
+                "summary": "Email signup confirm",
+                "request": {
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "email": "test@gmail.com",
+                                "name": "Tom rofland",
+                                "link": "google.com"
+                            }
+                        }
+                    }
+                },
+                "responce": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "message": "success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/email/change/toUser/": {
+            "POST": {
+                "summary": "Email change password",
+                "request": {
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "email": "test@gmail.com",
+                                "name": "Tom rofland",
+                                "link": "google.com"
+                            }
+                        }
+                    }
+                },
+                "responce": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "message": "success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/push/oplata/toUser/": {
+            "POST": {
+                "summary": "Notification payment for app",
+                "request": {
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "registrationToken": "asdxzgsq12ras",
+                                "name": "Tom Rofland"
+                            }
+                        }
+                    }
+                },
+                "responce": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "message": "success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/push/new-fee/toUser/": {
+            "POST": {
+                "summary": "New fee",
+                "request": {
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "registrationToken": "asdxzgsq12ras",
+                                "name": "Yevhen Kovalenko",
+                                "fee": {
+                                    "title": "Перевищення швидкості",
+                                    "date": "10.09.20"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responce": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "message": "success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/push/status-fee/toUser/": {
+            "POST": {
+                "summary": "Changed status",
+                "request": {
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "registrationToken": "asdxzgsq12ras",
+                                "name": "Tom Rofland",
+                                "fee": {
+                                    "title": "Перевищення швидкості",
+                                    "date": "10.09.20",
+                                    "status": "Оплачений"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responce": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "message": "success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/push/camera/toUser/": {
+            "POST": {
+                "summary": "Notification camera",
+                "request": {
+                    "content": {
+                        "application/json": {
+                            "examples": {
+                                "registrationToken": "zxcadjk3as23u1he7d",
+                                "range": "700"
+                            }
+                        }
+                    }
+                },
+                "responce": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "examples": {
+                                    "message": "success"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
