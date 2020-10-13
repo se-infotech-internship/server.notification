@@ -36,12 +36,12 @@ router.post('/api/push/oplata/toUser', async (ctx: Context, err) => {
 // new fee notification router
 router.post('/api/push/new-fee/toUser', async (ctx: Context, err) => {
 
-    const { registrationToken, fee, name } = ctx.request.body;
+    const { registrationToken } = ctx.request.body;
 
     const message = {
         notification: {
             title: 'Новий штраф!',
-            body: `Шановний, ${name}! Ви маєте несплачений штраф:  ${fee.title}. Команда «Way without problem» `
+            body: `Щоб переглянути перейдіть у додаток`
         }
     };
 
@@ -89,33 +89,5 @@ router.post('/api/push/status-fee/toUser', async (ctx: Context, err) => {
     }
 });
 
-// sound camera notification
-
-router.post('/api/push/camera/toUser', async (ctx: Context, err) => {
-
-    const { registrationToken, range} = ctx.request.body;
-
-    const message = {
-        notification: {
-            title: 'Камера',
-            body: `Камера через ${range} метрів`,
-            sound:"default"
-        }
-    };
-
-    try{
-        await pusher(registrationToken, message);
-        ctx.status = 200;
-        ctx.body = {
-            message: "all is allright"
-        }
-    }
-    catch(err){
-        ctx.body = {
-            message: "failed to send notification",
-            error: err
-        }
-    }
-});
 
 export default router;
