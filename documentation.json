@@ -178,12 +178,7 @@
                     "content": {
                         "application/json": {
                             "examples": {
-                                "registrationToken": "asdxzgsq12ras",
-                                "name": "Yevhen Kovalenko",
-                                "fee": {
-                                    "title": "Перевищення швидкості",
-                                    "date": "10.09.20"
-                                }
+                                "registrationToken": "asdxzgsq12ras"
                             }
                         }
                     }
